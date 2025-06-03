@@ -37,13 +37,13 @@ body {
 }
 
 .header-logo-title img {
-    width: 50px;
+    width: 50px; /* Might reduce this for mobile */
     height: auto;
 }
 
 .header-logo-title h2 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.5em; /* Might reduce this for mobile */
     font-weight: 600;
     color: #f3ce02;
 }
@@ -53,17 +53,17 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 8px;
+    gap: 8px; /* Might reduce this for mobile or stack nav */
 }
 
 .header-nav a {
     text-decoration: none;
     color: #a0a0a0;
     font-weight: 500;
-    padding: 8px 16px;
+    padding: 8px 16px; /* Might reduce this for mobile */
     border-radius: 8px;
     transition: background-color 0.2s ease, color 0.2s ease;
-    font-size: 0.9em;
+    font-size: 0.9em; /* Might reduce this for mobile */
 }
 
 .header-nav a:hover {
@@ -81,8 +81,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(90vh - 70px);
-    padding: 40px 32px 60px;
+    min-height: calc(90vh - 70px); /* Consider adjusting 70px if header height changes */
+    padding: 40px 32px 60px; /* Might reduce this for mobile */
     text-align: center;
     position: relative;
 }
@@ -90,11 +90,11 @@ body {
 .hero-content-inner {
     max-width: 750px;
     margin: 0 auto;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Might reduce this for mobile */
 }
 
 .hero-section h1 {
-    font-size: 3.5em;
+    font-size: 3.5em; /* Might reduce this for mobile */
     color: #E0E0E0;
     margin-bottom: 15px;
     font-weight: 700;
@@ -102,7 +102,7 @@ body {
 }
 
 .hero-section .subtitle {
-    font-size: 1.25em;
+    font-size: 1.25em; /* Might reduce this for mobile */
     color: #a0a0a0;
     line-height: 1.7;
     margin-bottom: 30px;
@@ -114,6 +114,7 @@ body {
 .hero-tags {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
     gap: 10px;
     margin-bottom: 30px;
 }
@@ -121,18 +122,18 @@ body {
 .hero-tags span {
     background-color: rgba(224, 224, 224, 0.05);
     color: #b0b0b0;
-    padding: 6px 12px;
+    padding: 6px 12px; /* Might reduce this for mobile */
     border-radius: 16px;
-    font-size: 0.85em;
+    font-size: 0.85em; /* Might reduce this for mobile */
     border: 1px solid rgba(224, 224, 224, 0.1);
 }
 
 /* --- Page Title Section (for Tutorials, Tips etc. pages) --- */
 .page-title-section {
-    padding: 50px 32px 40px; /* Top, LR, Bottom padding */
+    padding: 50px 32px 40px;
     text-align: center;
-    background-color: rgba(22,22,22,0.3); /* Slightly different from hero or articles bg */
-    border-bottom: 1px solid rgba(224, 224, 224, 0.05); /* Subtle separator */
+    background-color: rgba(22,22,22,0.3);
+    border-bottom: 1px solid rgba(224, 224, 224, 0.05);
 }
 
 .page-title-container {
@@ -141,15 +142,15 @@ body {
 }
 
 .page-title-section h1 {
-    font-size: 2.8em; 
-    color: #E0E0E0; 
+    font-size: 2.8em; /* Might reduce this for mobile */
+    color: #E0E0E0;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .page-title-section p {
-    font-size: 1.1em;
-    color: #a0a0a0; 
+    font-size: 1.1em; /* Might reduce this for mobile */
+    color: #a0a0a0;
     line-height: 1.6;
     margin-bottom: 0;
 }
@@ -168,7 +169,7 @@ body {
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
-    padding: 10px 18px;
+    padding: 10px 18px; /* Might reduce this for mobile */
     position: relative;
 }
 
@@ -178,7 +179,7 @@ body {
     border: none;
     outline: none;
     color: #E0E0E0;
-    font-size: 1.1em;
+    font-size: 1.1em; /* Might reduce this for mobile */
     padding: 8px 12px;
 }
 .search-bar input[type="search"]::placeholder {
@@ -226,10 +227,11 @@ body {
     border-radius: 4px;
     font-size: 0.8em;
     border: 1px solid rgba(224, 224, 224, 0.1);
+    /* This might be hidden on mobile */
 }
 
 .articles-section {
-    padding: 60px 32px;
+    padding: 60px 32px; /* Might reduce this for mobile */
     background-color: rgba(24,24,24,0.5);
     margin-top: 0;
 }
@@ -241,8 +243,8 @@ body {
 }
 
 .articles-container > h2 {
-    margin-bottom: 50px;
-    font-size: 2.4em;
+    margin-bottom: 50px; /* Might reduce this for mobile */
+    font-size: 2.4em; /* Might reduce this for mobile */
     color: #E0E0E0;
     border-bottom: 2px solid #f3ce02;
     display: inline-block;
@@ -252,8 +254,9 @@ body {
 
 .article-grid {
     display: grid;
+    /* This is already responsive, but we can adjust minmax for smaller screens if needed */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    gap: 30px; /* Might reduce this for mobile */
     text-align: left;
 }
 
@@ -277,12 +280,12 @@ body {
 
 .article-card-image {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Consider adjusting or making aspect-ratio based for mobile */
     object-fit: cover;
 }
 
 .article-card-content {
-    padding: 20px 25px;
+    padding: 20px 25px; /* Might reduce this for mobile */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -291,33 +294,33 @@ body {
 .article-card-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 15px; /* row-gap column-gap */
+    gap: 10px 15px;
     margin-bottom: 12px;
-    font-size: 0.8em;
+    font-size: 0.8em; /* Might reduce this for mobile */
     color: #a0a0a0;
 }
 
 .meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 5px; /* Space between icon and text */
+    gap: 5px;
 }
 
 .meta-item svg {
     width: 14px;
     height: 14px;
-    fill: currentColor; /* Inherits color from .meta-item */
+    fill: currentColor;
 }
 
 .article-card h3 {
     margin-top: 0;
     margin-bottom: 12px;
     color: #f3ce02;
-    font-size: 1.35em;
+    font-size: 1.35em; /* Might reduce this for mobile */
 }
 
 .article-card p {
-    font-size: 0.95em;
+    font-size: 0.95em; /* Might reduce this for mobile */
     line-height: 1.6;
     color: #b0b0b0;
     flex-grow: 1;
@@ -342,26 +345,26 @@ body {
 
 /* --- Article Page Specific Styles --- */
 .article-page-main {
-    padding: 0 32px; /* Remove top/bottom padding, handled by sections */
+    padding: 0 32px; /* Might reduce horizontal padding for mobile */
 }
 
 .article-content-container {
-    max-width: 1100px; /* Or your preferred max width for content + sidebar */
-    margin: 40px auto; /* Top/bottom margin and center */
+    max-width: 1100px;
+    margin: 40px auto;
     display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); /* Main content takes more space */
-    gap: 40px;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    gap: 40px; /* Might reduce this for mobile */
 }
 
 .article-header {
-    grid-column: 1 / -1; /* Header spans both columns */
+    grid-column: 1 / -1;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(224, 224, 224, 0.1);
 }
 
 .article-header h1 {
-    font-size: 2.8em; /* Adjust as needed */
+    font-size: 2.8em; /* Might reduce this for mobile */
     color: #E0E0E0;
     margin-bottom: 15px;
     line-height: 1.2;
@@ -371,12 +374,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 20px;
-    font-size: 0.9em;
+    font-size: 0.9em; /* Might reduce this for mobile */
     color: #a0a0a0;
     margin-bottom: 25px;
 }
 
-.article-meta-detailed .meta-item { /* Reusing meta-item from cards, but can be specific */
+.article-meta-detailed .meta-item {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -389,27 +392,27 @@ body {
 
 .article-hero-image {
     width: 100%;
-    max-height: 450px; /* Optional: constrain hero image height */
+    max-height: 450px;
     object-fit: cover;
     border-radius: 8px;
-    margin-top: 10px; /* Space from meta */
+    margin-top: 10px;
 }
 
 
 .article-body {
-    grid-column: 1 / 2; /* Main content in the first column */
-    font-size: 1.05em;
+    grid-column: 1 / 2;
+    font-size: 1.05em; /* Might reduce this for mobile */
     line-height: 1.7;
-    color: #c0c0c0; /* Slightly brighter than default for readability */
+    color: #c0c0c0;
 }
 
 .article-body h2 {
-    font-size: 2em;
+    font-size: 2em; /* Might reduce this for mobile */
     color: #E0E0E0;
     margin-top: 40px;
     margin-bottom: 20px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #f3ce02; /* Primary accent */
+    border-bottom: 1px solid #f3ce02;
 }
 .article-body h2:first-child {
     margin-top: 0;
@@ -417,7 +420,7 @@ body {
 
 
 .article-body h3 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Might reduce this for mobile */
     color: #E0E0E0;
     margin-top: 30px;
     margin-bottom: 15px;
@@ -428,7 +431,7 @@ body {
 }
 
 .article-body p.lead {
-    font-size: 1.2em;
+    font-size: 1.2em; /* Might reduce this for mobile */
     color: #E0E0E0;
     margin-bottom: 2em;
     font-weight: 500;
@@ -437,7 +440,7 @@ body {
 .article-body ul,
 .article-body ol {
     margin-bottom: 1.5em;
-    padding-left: 25px;
+    padding-left: 25px; /* Might reduce this for mobile */
 }
 .article-body ul li,
 .article-body ol li {
@@ -458,7 +461,7 @@ body {
 }
 
 .article-body figcaption {
-    font-size: 0.85em;
+    font-size: 0.85em; /* Might reduce this for mobile */
     color: #a0a0a0;
     margin-top: 10px;
     font-style: italic;
@@ -469,11 +472,12 @@ body {
     padding: 0.2em 0.4em;
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
+    font-size: 0.9em; /* Might reduce this for mobile */
+    word-break: break-all; /* Help prevent overflow for long code strings */
 }
 .article-body pre {
     background-color: #1E1E1E;
-    padding: 15px;
+    padding: 15px; /* Might reduce this for mobile */
     border-radius: 8px;
     overflow-x: auto;
     margin-bottom: 1.5em;
@@ -482,26 +486,27 @@ body {
 .article-body pre code {
     padding: 0;
     background-color: transparent;
-    font-size: 0.9em;
+    font-size: 0.9em; /* Might reduce this for mobile */
+    word-break: normal; /* Allow normal breaking in pre, rely on overflow-x */
 }
 
 
 .article-sidebar {
-    grid-column: 2 / 3; /* Sidebar in the second column */
-    padding-left: 20px; /* Space from main content */
-    border-left: 1px solid rgba(224, 224, 224, 0.08); /* Subtle separator */
-    align-self: start; /* Prevent stretching if content is short */
-    position: sticky; /* Make sidebar sticky */
-    top: 100px; /* Adjust based on your header height + some padding */
-    max-height: calc(100vh - 120px); /* Prevent it from going off-screen */
-    overflow-y: auto; /* Allow scrolling within sidebar if content is long */
+    grid-column: 2 / 3;
+    padding-left: 20px;
+    border-left: 1px solid rgba(224, 224, 224, 0.08);
+    align-self: start;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
 }
 
 .article-sidebar h3 {
-    font-size: 1.3em;
-    color: #f3ce02; /* Primary Accent */
+    font-size: 1.3em; /* Might reduce this for mobile */
+    color: #f3ce02;
     margin-bottom: 10px;
-    margin-top: 0; /* Reset for first h3 */
+    margin-top: 0;
 }
 .article-sidebar ul {
     list-style: none;
@@ -513,14 +518,14 @@ body {
     text-decoration: none;
     padding: 5px 0;
     display: block;
-    font-size: 0.9em;
+    font-size: 0.9em; /* Might reduce this for mobile */
     transition: color 0.2s ease;
 }
 .article-sidebar ul li a:hover {
     color: #E0E0E0;
 }
 .article-sidebar .table-of-contents li a {
-    padding-left: 10px; /* Indent TOC items */
+    padding-left: 10px;
     border-left: 2px solid transparent;
 }
 .article-sidebar .table-of-contents li a:hover {
@@ -528,10 +533,11 @@ body {
 }
 
 
-/* Responsive adjustments for article page */
+/* Responsive adjustments for article page - THIS IS GOOD, KEEPING IT */
 @media (max-width: 900px) {
     .article-content-container {
         grid-template-columns: 1fr; /* Stack content and sidebar */
+        gap: 30px; /* Reduce gap when stacked */
     }
     .article-sidebar {
         grid-column: 1 / -1; /* Sidebar takes full width below content */
@@ -546,29 +552,29 @@ body {
 }
 /* --- Intro Text Section (Homepage) --- */
 .intro-text-section {
-    padding: 40px 32px;
-    background-color: rgba(24,24,24,0.2); /* Subtle background, or match another section */
+    padding: 40px 32px; /* Might reduce this for mobile */
+    background-color: rgba(24,24,24,0.2);
 }
 
 .intro-text-container {
-    max-width: 800px; /* Or your preferred content width */
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
 .intro-text-container h2 {
-    font-size: 2.2em;
+    font-size: 2.2em; /* Might reduce this for mobile */
     color: #E0E0E0;
     margin-bottom: 20px;
 }
 
 .intro-text-container p {
-    font-size: 1.1em;
+    font-size: 1.1em; /* Might reduce this for mobile */
     color: #b0b0b0;
     line-height: 1.7;
 }
 .intro-text-container p a {
-    color: #f3ce02; /* Your primary accent */
+    color: #f3ce02;
     text-decoration: none;
     font-weight: 500;
 }
@@ -578,30 +584,29 @@ body {
 
 /* --- Q&A / FAQ Section --- */
 .qa-section {
-    padding: 60px 32px;
-    background-color: #121212; /* Or a slightly different dark shade */
+    padding: 60px 32px; /* Might reduce this for mobile */
+    background-color: #121212;
 }
 
 .qa-container {
     max-width: 850px;
     margin: 0 auto;
+    text-align: center; /* For centering inline-block h2 */
 }
 
 .qa-container > h2 {
-    text-align: center;
-    font-size: 2.4em;
+    font-size: 2.4em; /* Might reduce this for mobile */
     color: #E0E0E0;
     margin-bottom: 15px;
     border-bottom: 2px solid #f3ce02;
     display: inline-block;
     padding-bottom: 8px;
+    text-align: left; /* Reset for h2 content */
 }
-/* To center the inline-block h2 */
-.qa-container { text-align: center; } 
-.qa-container > h2 { text-align: left; } /* Reset if needed after parent centering */
+
 .qa-container > p.qa-intro {
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.1em; /* Might reduce this for mobile */
     color: #a0a0a0;
     margin-bottom: 40px;
     max-width: 700px;
@@ -612,26 +617,26 @@ body {
 
 .accordion {
     width: 100%;
-    text-align: left; /* Reset for accordion items */
+    text-align: left;
 }
 
 .accordion-item {
-    background: rgba(30, 30, 30, 0.45); /* Glassy background */
+    background: rgba(30, 30, 30, 0.45);
     backdrop-filter: blur(10px) saturate(120%);
     -webkit-backdrop-filter: blur(10px) saturate(120%);
     border: 1px solid rgba(224, 224, 224, 0.1);
     border-radius: 10px;
     margin-bottom: 15px;
-    overflow: hidden; /* Ensure content doesn't spill before expanding */
+    overflow: hidden;
 }
 
 .accordion-header {
     background: transparent;
     border: none;
     width: 100%;
-    padding: 18px 25px;
+    padding: 18px 25px; /* Might reduce this for mobile */
     text-align: left;
-    font-size: 1.15em;
+    font-size: 1.15em; /* Might reduce this for mobile */
     font-weight: 600;
     color: #E0E0E0;
     cursor: pointer;
@@ -657,21 +662,21 @@ body {
 
 .accordion-header[aria-expanded="true"] .accordion-icon {
     transform: rotate(-135deg);
-    margin-top: -4px; /* Adjust for visual centering when rotated */
+    margin-top: -4px;
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s ease-in-out, padding 0.35s ease-in-out;
-    background-color: rgba(24,24,24,0.3); /* Slightly darker inner bg */
-    padding: 0 25px;
+    background-color: rgba(24,24,24,0.3);
+    padding: 0 25px; /* Horizontal padding might be reduced */
 }
 
 .accordion-content p {
-    margin: 0; /* Reset margin for p inside */
+    margin: 0;
     padding: 20px 0;
-    font-size: 1em;
+    font-size: 1em; /* Might reduce this for mobile */
     line-height: 1.7;
     color: #b0b0b0;
 }
@@ -683,7 +688,7 @@ body {
 }
 
 .accordion-content a {
-    color: #03DAC6; /* Secondary accent for links in answers */
+    color: #03DAC6;
     text-decoration: none;
     font-weight: 500;
 }
@@ -694,10 +699,275 @@ body {
 
 .site-footer-main {
     text-align: center;
-    padding: 30px 32px;
+    padding: 30px 32px; /* Might reduce this for mobile */
     background-color: rgba(18,18,18,0.5);
-    margin-top: 60px;
+    margin-top: 60px; /* Might reduce this for mobile */
     color: #888888;
-    font-size: 0.85em;
+    font-size: 0.85em; /* Might reduce this for mobile */
     border-top: 1px solid rgba(224, 224, 224, 0.05);
+}
+
+/* ================================================ */
+/* ================ MOBILE STYLES ================= */
+/* ================================================ */
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 10px 15px; /* Reduced padding */
+        flex-direction: column; /* Stack logo and nav */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .header-logo-title {
+        margin-bottom: 10px; /* Space between logo-title and nav when stacked */
+    }
+
+    .header-logo-title img {
+        width: 40px; /* Smaller logo */
+    }
+
+    .header-logo-title h2 {
+        font-size: 1.3em; /* Smaller title */
+    }
+
+    .header-nav ul {
+        flex-direction: column; /* Stack nav items */
+        gap: 5px; /* Reduced gap */
+        width: 100%; /* Make nav take full width */
+        align-items: flex-start; /* Align nav items to start */
+    }
+
+    .header-nav a {
+        padding: 8px 10px; /* Adjusted padding */
+        font-size: 0.85em; /* Slightly smaller font */
+        width: 100%; /* Make links take full width of their container */
+        box-sizing: border-box;
+    }
+    
+    .hero-section {
+        padding: 30px 15px 40px; /* Reduced padding */
+        min-height: calc(80vh - 100px); /* Adjust if header height changes significantly */
+    }
+
+    .hero-content-inner {
+        margin-bottom: 25px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em; /* Significantly smaller for mobile */
+    }
+
+    .hero-section .subtitle {
+        font-size: 1em; /* Smaller subtitle */
+        margin-bottom: 20px;
+    }
+
+    .hero-tags {
+        gap: 8px; /* Slightly reduced gap */
+        margin-bottom: 20px;
+    }
+
+    .hero-tags span {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    .page-title-section {
+        padding: 30px 15px 25px;
+    }
+
+    .page-title-section h1 {
+        font-size: 2em;
+    }
+
+    .page-title-section p {
+        font-size: 1em;
+    }
+    
+    .search-bar {
+        padding: 8px 12px;
+    }
+
+    .search-bar input[type="search"] {
+        font-size: 1em;
+        padding: 6px 8px;
+    }
+
+    .search-shortcut {
+        display: none; /* Hide search shortcut on mobile */
+    }
+
+    .articles-section {
+        padding: 40px 15px;
+    }
+
+    .articles-container > h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .article-grid {
+        /* Adjust minmax for narrower cards if 320px is too wide for some small phones */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    
+    .article-card:hover { /* Disable hover transform on mobile if it causes issues */
+        transform: none; 
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Reset to base shadow */
+    }
+
+    .article-card-content {
+        padding: 15px 20px;
+    }
+
+    .article-card-meta {
+        font-size: 0.75em;
+        gap: 8px 12px;
+    }
+    
+    .article-card h3 {
+        font-size: 1.2em;
+    }
+
+    .article-card p {
+        font-size: 0.9em;
+    }
+
+    .article-page-main {
+        padding: 0 15px;
+    }
+    
+    /* .article-content-container already handled by 900px media query */
+
+    .article-header h1 {
+        font-size: 2.2em;
+    }
+
+    .article-meta-detailed {
+        font-size: 0.85em;
+        gap: 8px 15px;
+    }
+    
+    .article-body {
+        font-size: 0.95em; /* Slightly smaller body text for mobile */
+    }
+
+    .article-body h2 {
+        font-size: 1.6em;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .article-body h3 {
+        font-size: 1.3em;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .article-body p.lead {
+        font-size: 1.1em;
+    }
+
+    .article-body ul,
+    .article-body ol {
+        padding-left: 20px;
+    }
+
+    .article-body figcaption {
+        font-size: 0.8em;
+    }
+
+    .article-body code,
+    .article-body pre code {
+        font-size: 0.85em; /* Smaller code font */
+    }
+    .article-body pre {
+        padding: 10px;
+    }
+
+    .article-sidebar h3 {
+        font-size: 1.15em;
+    }
+    .article-sidebar ul li a {
+        font-size: 0.85em;
+    }
+
+    .intro-text-section {
+        padding: 30px 15px;
+    }
+
+    .intro-text-container h2 {
+        font-size: 1.8em;
+    }
+
+    .intro-text-container p {
+        font-size: 1em;
+    }
+
+    .qa-section {
+        padding: 40px 15px;
+    }
+
+    .qa-container > h2 {
+        font-size: 1.8em;
+    }
+    .qa-container > p.qa-intro {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .accordion-header {
+        padding: 15px 20px;
+        font-size: 1.05em;
+    }
+
+    .accordion-content {
+        padding: 0 20px; /* Adjust horizontal padding */
+    }
+    .accordion-content p {
+        font-size: 0.95em;
+        padding: 15px 0;
+    }
+    .accordion-content p:first-child {
+        padding-top: 20px;
+    }
+    .accordion-content p:last-child {
+        padding-bottom: 20px;
+    }
+
+    .site-footer-main {
+        padding: 25px 15px;
+        margin-top: 40px;
+        font-size: 0.8em;
+    }
+}
+
+/* Optional: Even smaller screen adjustments if needed */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .hero-section .subtitle {
+        font-size: 0.9em;
+    }
+    
+    .article-grid {
+        /* Force single column on very small screens */
+        grid-template-columns: 1fr;
+    }
+
+    .article-header h1 {
+        font-size: 1.8em;
+    }
+
+    .article-body {
+        font-size: 0.9em;
+    }
+    .article-body h2 {
+        font-size: 1.4em;
+    }
+    .article-body h3 {
+        font-size: 1.2em;
+    }
 }
