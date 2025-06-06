@@ -55,6 +55,7 @@
       }
     }
     </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AbjThWMNtESH0SmnlspQbFWhrOtWQLrNvssWLDPMDhi85EdSWwhw7d43YzgQ1AFhfY04UfxZba472Uvq&currency=USD"></script>
 </head>
 <body>
     <header class="site-header">
@@ -131,6 +132,25 @@
                         </div>
                     </article>
 
+                                        <article class="article-card donation-card">
+                        <!-- A custom SVG icon for the image area -->
+                        <div class="donation-card-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v4h-2v-4zm0 6h2v2h-2v-2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"></path></svg>
+                        </div>
+                        <div class="article-card-content">
+                            <h3>Support BlenderForge</h3>
+                            <p>Like our content? Your donation helps us create more high-quality tutorials and keeps the forge burning!</p>
+
+                            <!-- The interactive donation part -->
+                            <div class="donation-input-group">
+                                <span>$</span>
+                                <input type="number" id="donation-amount" name="donation-amount" min="1.00" step="0.01" value="5.00">
+                            </div>
+                            <div id="paypal-button-container"></div>
+                        </div>
+                    </article>
+
                     <article class="article-card">
                         <a href="articles/render-optimization.html" class="article-card-image-link" aria-hidden="true" tabindex="-1">
                             <img src="media/website/coming-soon.png" alt="Blender render settings panel with optimization options highlighted." class="article-card-image">
@@ -156,5 +176,50 @@
     <footer class="site-footer-main">
         <p>© 2025 BlenderForge. All rights reserved.</p>
     </footer> 
+    <script>
+        paypal.Buttons({
+            // This function is called when the user clicks the PayPal button
+            createOrder: function(data, actions) {
+                // 1. Get the donation amount from the input field
+                var donationAmount = document.getElementById('donation-amount').value;
+
+                // 2. Basic validation: Make sure it's a number and at least $1.00
+                if (isNaN(donationAmount) || donationAmount < 1) {
+                    alert('Please enter a valid donation amount of at least $1.00.');
+                    // By returning, we stop the transaction from proceeding.
+                    return; 
+                }
+
+                // 3. Use the user-provided amount to create the order
+                return actions.order.create({
+                    purchase_units: [{
+                        description: 'A friendly donation to support BlenderForge content!',
+                        amount: {
+                            currency_code: 'USD', // It's good practice to be explicit
+                            value: donationAmount // Use the variable here
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction after payer approval (this part remains the same)
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                    // Successful capture! You can still log this for debugging.
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    
+                    // --- THIS IS THE IMPORTANT PART ---
+                    // Redirect the user to your new thank you page
+                    window.location.href = 'thank-you.html'; 
+                });
+            },
+
+            // Handle errors (this part remains the same)
+            onError: function(err) {
+                console.error('An error occurred during the transaction', err);
+                alert('An error occurred. Please try again later.');
+            }
+        }).render('#paypal-button-container');
+    </script>
 </body>
 </html>

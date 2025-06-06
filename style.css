@@ -842,3 +842,118 @@ a:hover {
     text-decoration: none;
     transform: translateY(-2px);
 }
+
+
+/* ================================================ */
+/* ============ STAND-OUT DONATION CARD ============= */
+/* ================================================ */
+
+.donation-card {
+    /* Make it stand out with your primary accent color */
+    border-color: rgba(243, 206, 2, 0.5); 
+    box-shadow: 0 8px 40px rgba(243, 206, 2, 0.1);
+    /* A subtle glow effect using a radial gradient */
+    background: 
+        radial-gradient(circle at 50% 0%, rgba(243, 206, 2, 0.1), transparent 70%),
+        #1e1e1e;
+}
+
+.donation-card:hover {
+    /* Enhance the effect on hover */
+    border-color: #f3ce02;
+    transform: translateY(-12px); /* A bigger lift than normal cards */
+    box-shadow: 0 16px 50px rgba(243, 206, 2, 0.2);
+}
+
+/* Style the custom image area for the icon */
+.donation-card .donation-card-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style the two SVG icons to create a unique graphic */
+.donation-card .donation-card-image svg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    color: rgba(243, 206, 2, 0.15);
+    filter: drop-shadow(0 0 10px rgba(243, 206, 2, 0.2));
+}
+
+/* The heart icon appears on top */
+.donation-card .donation-card-image svg:last-child {
+    width: 70px;
+    height: 70px;
+    color: #f3ce02;
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+/* A subtle pulse animation to draw the eye */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Adjust the content styles inside the donation card */
+.donation-card h3 {
+    color: #FFFFFF; /* White heading for more punch */
+}
+.donation-card:hover h3 {
+    color: #f3ce02; /* Keep the hover effect */
+}
+.donation-card p {
+    min-height: 70px; /* Reserve space to prevent layout shift */
+}
+
+/* Reuse and adapt the input styles for the card context */
+.donation-card .donation-input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 80%;
+    margin: 0 auto 15px auto;
+    transition: border-color 0.2s ease;
+}
+.donation-card .donation-input-group:focus-within {
+    border-color: #f3ce02;
+}
+.donation-card .donation-input-group span {
+    font-size: 1.2em;
+    color: #a0a0a0;
+}
+.donation-card .donation-input-group input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #E0E0E0;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 0;
+}
+.donation-card .donation-input-group input::-webkit-outer-spin-button,
+.donation-card .donation-input-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0;
+}
+.donation-card .donation-input-group input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* PayPal container within the card */
+.donation-card #paypal-button-container {
+    position: relative;
+    z-index: 10;
+}
