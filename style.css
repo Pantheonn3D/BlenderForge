@@ -788,3 +788,57 @@ a:hover {
     max-width: 250px; /* Constrain the width of the buttons */
     margin: 0 auto; /* Center the container */
 }
+
+.thank-you-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(80vh - 75px); /* Adjust based on header/footer height */
+    padding: 60px 32px;
+}
+
+.thank-you-container {
+    max-width: 650px;
+}
+
+.thank-you-icon {
+    width: 80px;
+    height: 80px;
+    color: #f3ce02; /* Your primary accent color */
+    margin-bottom: 25px;
+}
+
+.thank-you-container h1 {
+    font-size: 3em;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.thank-you-container p {
+    font-size: 1.15em;
+    color: #a0a0a0;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #f3ce02; /* Your accent color */
+    color: #121212; /* Dark text for contrast */
+    font-weight: 600;
+    font-size: 1em;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffd900; /* Brighter accent color on hover */
+    color: #121212;
+    text-decoration: none;
+    transform: translateY(-2px);
+}

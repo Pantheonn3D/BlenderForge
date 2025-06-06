@@ -691,9 +691,12 @@
             // Finalize the transaction after payer approval (this part remains the same)
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(orderData) {
+                    // Successful capture! You can still log this for debugging.
                     console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                    var transaction = orderData.purchase_units[0].payments.captures[0];
-                    alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nThank you for your support, ' + orderData.payer.name.given_name + '!');
+                    
+                    // --- THIS IS THE IMPORTANT PART ---
+                    // Redirect the user to your new thank you page
+                    window.location.href = 'thank-you.html'; 
                 });
             },
 
