@@ -77,6 +77,7 @@
       "timeRequired": "PT30M"
     }
     </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AbjThWMNtESH0SmnlspQbFWhrOtWQLrNvssWLDPMDhi85EdSWwhw7d43YzgQ1AFhfY04UfxZba472Uvq&currency=USD"></script>
 </head>
 <body>
     <header class="site-header">
@@ -281,6 +282,21 @@
                     <li><a href="#status-bar">9. The Status Bar</a></li>
                     <li><a href="#conclusion">Conclusion</a></li>
                 </ul>
+                <!-- START: Replace the old sidebar section with this -->
+                <div class="donation-widget">
+                    <h3>Support BlenderForge</h3>
+                    <p>If you find this content helpful, please consider a donation!</p>
+                    
+                    <div class="donation-input-group">
+                        <label for="donation-amount">USD</label>
+                        <span>$</span>
+                        <input type="number" id="donation-amount" name="donation-amount" min="1.00" step="0.01" value="5.00">
+                    </div>
+
+                    <!-- This is the original container for the buttons -->
+                    <div id="paypal-button-container"></div>
+                </div>
+                <!-- END: New sidebar section -->
                 <h3>Related Articles</h3>
                 <ul>
                     <li><a href="blender-light-paths-guide.html">How Light Paths Work in Blender</a></li>
@@ -307,6 +323,48 @@
                 }
             });
         });
+    </script>
+    <script>
+        paypal.Buttons({
+            // This function is called when the user clicks the PayPal button
+            createOrder: function(data, actions) {
+                // 1. Get the donation amount from the input field
+                var donationAmount = document.getElementById('donation-amount').value;
+
+                // 2. Basic validation: Make sure it's a number and at least $1.00
+                if (isNaN(donationAmount) || donationAmount < 1) {
+                    alert('Please enter a valid donation amount of at least $1.00.');
+                    // By returning, we stop the transaction from proceeding.
+                    return; 
+                }
+
+                // 3. Use the user-provided amount to create the order
+                return actions.order.create({
+                    purchase_units: [{
+                        description: 'A friendly donation to support BlenderForge content!',
+                        amount: {
+                            currency_code: 'USD', // It's good practice to be explicit
+                            value: donationAmount // Use the variable here
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction after payer approval (this part remains the same)
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    var transaction = orderData.purchase_units[0].payments.captures[0];
+                    alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nThank you for your support, ' + orderData.payer.name.given_name + '!');
+                });
+            },
+
+            // Handle errors (this part remains the same)
+            onError: function(err) {
+                console.error('An error occurred during the transaction', err);
+                alert('An error occurred. Please try again later.');
+            }
+        }).render('#paypal-button-container');
     </script>
 </body>
 </html>
