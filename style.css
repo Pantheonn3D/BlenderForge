@@ -94,7 +94,6 @@ a:hover {
     font-weight: 600;
 }
 
-
 /* --- Hero Section (Homepage) --- */
 .hero-section {
     display: flex;
@@ -255,6 +254,7 @@ a:hover {
     font-size: 2.2em;
     color: #E0E0E0;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 .intro-text-container p {
     font-size: 1.1em;
@@ -276,6 +276,7 @@ a:hover {
     margin-bottom: 50px;
     font-size: 2.5em;
     color: #E0E0E0;
+    font-weight: 600;
     border-bottom: 2px solid #f3ce02;
     display: inline-block;
     padding-bottom: 10px;
@@ -343,6 +344,7 @@ a:hover {
     margin-bottom: 12px;
     color: #E0E0E0;
     font-size: 1.35em;
+    font-weight: 600;
     line-height: 1.4;
     transition: color 0.2s ease;
 }
@@ -387,6 +389,7 @@ a:hover {
 .qa-title-block h2 {
     font-size: 2.5em;
     color: #E0E0E0;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 .qa-title-block .qa-intro {
@@ -464,17 +467,26 @@ a:hover {
     padding-bottom: 25px;
 }
 
-/* --- Article Page Specific Styles --- */
+/* ================================================= */
+/* === NEW & IMPROVED ARTICLE PAGE & SIDEBAR STYLES === */
+/* ================================================= */
+
+/* --- Main Article Layout --- */
 .article-page-main {
     padding: 40px 32px;
 }
+
 .article-content-container {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 3fr) 280px;
+    /* Adjusted grid for a slightly wider sidebar */
+    grid-template-columns: minmax(0, 3fr) 320px; 
     gap: 60px;
+    align-items: start; /* Ensures items align to the top */
 }
+
+/* --- Article Header --- */
 .article-header {
     grid-column: 1 / -1;
     margin-bottom: 30px;
@@ -484,6 +496,7 @@ a:hover {
 .article-header h1 {
     font-size: 3em;
     color: #FFFFFF;
+    font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -507,6 +520,8 @@ a:hover {
     margin-top: 30px;
     background-color: #1e1e1e;
 }
+
+/* --- Main Article Body Content --- */
 .article-body {
     grid-column: 1 / 2;
     font-size: 1.1em;
@@ -525,6 +540,7 @@ a:hover {
 .article-body h2 {
     font-size: 2em;
     color: #FFFFFF;
+    font-weight: 600;
     margin: 2em 0 1em 0;
     padding-bottom: 10px;
     border-bottom: 1px solid #f3ce02;
@@ -532,6 +548,7 @@ a:hover {
 .article-body h3 {
     font-size: 1.6em;
     color: #E0E0E0;
+    font-weight: 600;
     margin: 1.8em 0 1em 0;
 }
 .article-body ul, .article-body ol {
@@ -558,50 +575,180 @@ a:hover {
     margin-top: 12px;
     font-style: italic;
 }
-.article-body code {
-    background-color: #101010;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.2em 0.5em;
+.article-body kbd {
+    background-color: #333;
+    border: 1px solid #555;
     border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
+    padding: 0.2em 0.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    color: #e0e0e0;
+    box-shadow: 0 2px 0 #000;
+    display: inline-block;
+    margin: 0 2px;
+    position: relative;
+    top: -1px;
+}
+.article-body .info-box {
+    background-color: rgba(243, 206, 2, 0.05);
+    border-left: 4px solid #f3ce02;
+    padding: 1.5em;
+    margin: 2em 0;
+    border-radius: 0 8px 8px 0;
+}
+.article-body .info-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
     color: #f3ce02;
+}
+.article-body .info-box p {
+    margin-bottom: 0;
+    font-size: 0.95em;
+    color: #c0c0c0;
 }
 
+/* --- STICKY SIDEBAR CONTAINER --- */
 .article-sidebar {
     grid-column: 2 / 3;
-    align-self: start;
+    position: -webkit-sticky;
     position: sticky;
-    top: 100px; /* Header height + spacing */
+    top: 90px; /* Header height + spacing */
+    
+    /* This adds perfect spacing between all widgets in the sidebar */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
-.article-sidebar h3 {
-    font-size: 1.3em;
+
+/* --- UNIFIED SIDEBAR WIDGET STYLES --- */
+.toc-collapsible,
+.donation-widget,
+.article-sidebar .info-box,
+.related-articles-widget { /* Add class="related-articles-widget" to your related articles div */
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 22px;
+}
+
+/* --- WIDGET HEADINGS --- */
+.article-sidebar h3,
+.toc-collapsible summary {
+    font-size: 1.15rem;
+    font-weight: 600;
     color: #f3ce02;
-    margin-top: 0;
-    margin-bottom: 15px;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* --- WIDGET LIST STYLING --- */
 .article-sidebar ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 30px;
+    margin: 0;
+}
+.article-sidebar ul li {
+    padding: 0.6rem 0;
+    line-height: 1.6;
+}
+/* Add a separator line between list items */
+.article-sidebar ul li + li {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 .article-sidebar ul li a {
-    color: #a0a0a0;
-    padding: 6px 0;
-    display: block;
-    font-size: 0.95em;
-    border-left: 2px solid transparent;
-    padding-left: 15px;
-    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+    color: #b0b0b0;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 .article-sidebar ul li a:hover {
-    color: #E0E0E0;
-    border-left-color: #f3ce02;
-    padding-left: 20px;
-    text-decoration: none;
+    color: #f3ce02;
 }
 
+/* --- SPECIAL WIDGET: Table of Contents --- */
+.toc-collapsible {
+    padding: 0; /* Override default padding for the container */
+    overflow: hidden; /* Important for border-radius */
+}
+.toc-collapsible summary {
+    padding: 22px;
+    margin-bottom: 0;
+    cursor: pointer;
+    list-style: none; /* Hide default marker */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+.toc-collapsible summary:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+.toc-collapsible summary::-webkit-details-marker { display: none; }
+.toc-collapsible summary::after {
+    content: '▾';
+    font-size: 1.5rem;
+    color: #a0a0a0;
+    transition: transform 0.3s ease-in-out;
+}
+.toc-collapsible[open] > summary::after {
+    transform: rotate(180deg);
+}
+.toc-collapsible .table-of-contents {
+    padding: 0 22px 22px 22px;
+}
+
+/* --- SPECIAL WIDGET: Donation --- */
+.donation-widget {
+    text-align: center;
+}
+.donation-widget p {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0 auto 1.5rem auto;
+}
+.donation-input-group {
+    display: flex;
+    align-items: center;
+    background-color: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 0 auto 1.5rem auto;
+}
+.donation-input-group span {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    padding-right: 8px;
+}
+.donation-input-group input {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 5px;
+    width: 100%;
+}
+.donation-input-group input:focus { outline: none; }
+
+/* --- SPECIAL WIDGET: Quick Reference --- */
+.article-sidebar .info-box strong {
+    color: #ffffff; /* Make the shortcut name white */
+}
+.article-sidebar .info-box ul li {
+    font-size: 0.9em;
+}
+
+/* --- CLEANUP: Remove old conflicting styles --- */
+.article-sidebar h3 { margin-bottom: 1rem; } /* Already defined in group */
+.toc-collapsible { margin-bottom: 0; } /* Spacing is now handled by gap */
+.donation-widget { margin: 0; } /* Spacing is now handled by gap */
+
 /* --- Footer --- */
+
 .site-footer-main {
     text-align: center;
     padding: 40px 32px;
@@ -609,6 +756,240 @@ a:hover {
     color: #888888;
     font-size: 0.9em;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ================================================ */
+/* ============== DONATION WIDGET STYLES ============ */
+/* ================================================ */
+
+/* --- Unified Donation Input Group Styling --- */
+.donation-input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 18px;
+    max-width: 220px;
+    margin: 0 auto 20px auto;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donation-input-group:focus-within {
+    border-color: #f3ce02;
+    box-shadow: 0 0 0 3px rgba(243, 206, 2, 0.2);
+}
+
+.donation-input-group label {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #757575;
+}
+
+.donation-input-group span {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #a0a0a0;
+    line-height: 1;
+}
+
+.donation-input-group input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #E0E0E0;
+    width: 100px;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 0;
+}
+
+.donation-input-group input::-webkit-outer-spin-button,
+.donation-input-group input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.donation-input-group input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* --- Sidebar Donation Widget --- */
+.donation-widget {
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.donation-widget h3 {
+    color: #f3ce02;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.donation-widget p {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    line-height: 1.6;
+    max-width: 200px;
+    margin: 0 auto 20px auto;
+}
+
+/* --- PayPal Button Container --- */
+#paypal-button-container {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* --- Thank You Page --- */
+.thank-you-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(80vh - 75px);
+    padding: 60px 32px;
+}
+
+.thank-you-container {
+    max-width: 650px;
+}
+
+.thank-you-icon {
+    width: 80px;
+    height: 80px;
+    color: #f3ce02;
+    margin-bottom: 25px;
+}
+
+.thank-you-container h1 {
+    font-size: 3em;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.thank-you-container p {
+    font-size: 1.15em;
+    color: #a0a0a0;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #f3ce02;
+    color: #121212;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffd900;
+    color: #121212;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* ================================================ */
+/* ============ STAND-OUT DONATION CARD ============= */
+/* ================================================ */
+
+.donation-card {
+    /* Base styles from .article-card to ensure it behaves correctly in a grid */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    /* Unique styling for emphasis */
+    border: 1px solid rgba(243, 206, 2, 0.5); 
+    border-radius: 12px;
+    box-shadow: 0 8px 40px rgba(243, 206, 2, 0.1);
+    background: 
+        radial-gradient(circle at 50% 0%, rgba(243, 206, 2, 0.1), transparent 70%),
+        #1e1e1e;
+    
+    /* Consistent transition from .article-card */
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, border-color 0.25s ease-in-out;
+}
+
+.donation-card:hover {
+    border-color: #f3ce02;
+    transform: translateY(-12px);
+    box-shadow: 0 16px 50px rgba(243, 206, 2, 0.2);
+}
+
+.donation-card .donation-card-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.donation-card .donation-card-image svg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    color: rgba(243, 206, 2, 0.15);
+    filter: drop-shadow(0 0 10px rgba(243, 206, 2, 0.2));
+}
+
+.donation-card .donation-card-image svg:last-child {
+    width: 70px;
+    height: 70px;
+    color: #f3ce02;
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.donation-card .article-card-content {
+    /* This rule assumes the inner div from .article-card is reused */
+    text-align: center;
+}
+
+.donation-card h3 {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+.donation-card:hover h3 {
+    color: #f3ce02;
+}
+.donation-card p {
+    min-height: 70px;
+    flex-grow: 0; /* Override flex-grow from standard card to size content naturally */
+}
+
+/* Card-specific donation input adjustments */
+.donation-card .donation-input-group {
+    width: 80%;
+}
+
+/* PayPal container within the card */
+.donation-card #paypal-button-container {
+    position: relative;
+    z-index: 10;
 }
 
 /* ================================================ */
@@ -684,276 +1065,4 @@ a:hover {
     .article-body h3 { font-size: 1.4em; }
 
     .accordion-header { font-size: 1.05em; }
-}
-
-/* ================================================ */
-/* ============== DONATION WIDGET STYLES ============ */
-/* ================================================ */
-
-/* --- Main Widget Container --- */
-/* Designed to match the look of .article-card or .accordion-item */
-.donation-widget {
-    background: #1e1e1e; /* Same background as .article-card */
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Same border as .article-card */
-    border-radius: 12px; /* Same rounding as .article-card */
-    padding: 25px;
-    margin-top: 30px; /* Spacing from the element above */
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-/* The primary heading of the widget */
-.donation-widget h3 {
-    color: #f3ce02; /* Your primary accent color, used in .article-sidebar h3 */
-    font-size: 1.3em;
-    margin-top: 0;
-    margin-bottom: 8px; /* Less space for a tighter group */
-}
-
-/* The descriptive paragraph */
-.donation-widget p {
-    font-size: 0.9em;
-    color: #a0a0a0; /* Matches .article-card-meta color */
-    line-height: 1.6;
-    max-width: 200px; /* Prevents text from looking awkward on wide screens */
-    margin: 0 auto 20px auto; /* Center the text block */
-}
-
-
-/* --- The Input Group (Label, $, and Input) --- */
-/* This is styled like your .search-bar for a consistent interactive feel */
-.donation-input-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: #121212; /* Using the main body background for contrast */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Matches .search-bar border */
-    border-radius: 8px; /* Common border-radius used throughout */
-    padding: 10px 15px;
-    max-width: 220px;
-    margin: 0 auto 20px auto;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Mimics the focus effect of your search bar for a professional feel */
-.donation-input-group:focus-within {
-    border-color: #f3ce02;
-    box-shadow: 0 0 0 3px rgba(243, 206, 2, 0.2);
-}
-
-/* The "USD" label */
-.donation-input-group label {
-    font-size: 0.8em;
-    font-weight: 500;
-    color: #757575; /* Matches placeholder text color */
-}
-
-/* The dollar sign */
-.donation-input-group span {
-    font-size: 1.4em;
-    font-weight: 400;
-    color: #a0a0a0; /* A soft, non-distracting color */
-    line-height: 1; /* Helps with vertical alignment */
-}
-
-/* The actual amount input field */
-.donation-input-group input {
-    font-family: 'Montserrat', sans-serif; /* Ensures font consistency */
-    font-size: 1.5em; /* Large and clear */
-    font-weight: 600; /* Bold and easy to read */
-    color: #E0E0E0; /* Your main text color */
-    width: 100px;
-    background: transparent;
-    border: none;
-    outline: none;
-    text-align: left;
-    padding: 0;
-}
-
-/* Hides the ugly default arrows on number inputs */
-.donation-input-group input::-webkit-outer-spin-button,
-.donation-input-group input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-.donation-input-group input[type=number] {
-    -moz-appearance: textfield;
-}
-
-
-/* --- PayPal Button Container --- */
-/* Ensures the buttons are centered within the widget */
-#paypal-button-container {
-    max-width: 250px; /* Constrain the width of the buttons */
-    margin: 0 auto; /* Center the container */
-}
-
-.thank-you-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: calc(80vh - 75px); /* Adjust based on header/footer height */
-    padding: 60px 32px;
-}
-
-.thank-you-container {
-    max-width: 650px;
-}
-
-.thank-you-icon {
-    width: 80px;
-    height: 80px;
-    color: #f3ce02; /* Your primary accent color */
-    margin-bottom: 25px;
-}
-
-.thank-you-container h1 {
-    font-size: 3em;
-    color: #FFFFFF;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.thank-you-container p {
-    font-size: 1.15em;
-    color: #a0a0a0;
-    line-height: 1.7;
-    margin-bottom: 40px;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #f3ce02; /* Your accent color */
-    color: #121212; /* Dark text for contrast */
-    font-weight: 600;
-    font-size: 1em;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.cta-button:hover {
-    background-color: #ffd900; /* Brighter accent color on hover */
-    color: #121212;
-    text-decoration: none;
-    transform: translateY(-2px);
-}
-
-
-/* ================================================ */
-/* ============ STAND-OUT DONATION CARD ============= */
-/* ================================================ */
-
-.donation-card {
-    /* Make it stand out with your primary accent color */
-    border-color: rgba(243, 206, 2, 0.5); 
-    box-shadow: 0 8px 40px rgba(243, 206, 2, 0.1);
-    /* A subtle glow effect using a radial gradient */
-    background: 
-        radial-gradient(circle at 50% 0%, rgba(243, 206, 2, 0.1), transparent 70%),
-        #1e1e1e;
-}
-
-.donation-card:hover {
-    /* Enhance the effect on hover */
-    border-color: #f3ce02;
-    transform: translateY(-12px); /* A bigger lift than normal cards */
-    box-shadow: 0 16px 50px rgba(243, 206, 2, 0.2);
-}
-
-/* Style the custom image area for the icon */
-.donation-card .donation-card-image {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Style the two SVG icons to create a unique graphic */
-.donation-card .donation-card-image svg {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    color: rgba(243, 206, 2, 0.15);
-    filter: drop-shadow(0 0 10px rgba(243, 206, 2, 0.2));
-}
-
-/* The heart icon appears on top */
-.donation-card .donation-card-image svg:last-child {
-    width: 70px;
-    height: 70px;
-    color: #f3ce02;
-    animation: pulse 2.5s infinite ease-in-out;
-}
-
-/* A subtle pulse animation to draw the eye */
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.8; }
-}
-
-/* Adjust the content styles inside the donation card */
-.donation-card h3 {
-    color: #FFFFFF; /* White heading for more punch */
-}
-.donation-card:hover h3 {
-    color: #f3ce02; /* Keep the hover effect */
-}
-.donation-card p {
-    min-height: 70px; /* Reserve space to prevent layout shift */
-}
-
-/* Reuse and adapt the input styles for the card context */
-.donation-card .donation-input-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: #121212;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 10px 15px;
-    width: 80%;
-    margin: 0 auto 15px auto;
-    transition: border-color 0.2s ease;
-}
-.donation-card .donation-input-group:focus-within {
-    border-color: #f3ce02;
-}
-.donation-card .donation-input-group span {
-    font-size: 1.2em;
-    color: #a0a0a0;
-}
-.donation-card .donation-input-group input {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4em;
-    font-weight: 600;
-    color: #E0E0E0;
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    text-align: left;
-    padding: 0;
-}
-.donation-card .donation-input-group input::-webkit-outer-spin-button,
-.donation-card .donation-input-group input::-webkit-inner-spin-button {
-  -webkit-appearance: none; margin: 0;
-}
-.donation-card .donation-input-group input[type=number] {
-  -moz-appearance: textfield;
-}
-
-/* PayPal container within the card */
-.donation-card #paypal-button-container {
-    position: relative;
-    z-index: 10;
 }

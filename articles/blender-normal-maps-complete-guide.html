@@ -198,7 +198,7 @@
 
                     <p>That's it! Your Normal Map should now be working correctly. Switch to Material Preview or Rendered viewport shading to see the effect.</p>
 
-                    <div class="warning-box">
+                    <div class="info-box">
                         <h4>Common Mistake:</h4>
                         <p>Never connect the Image Texture directly to the Principled BSDF Normal input. Always go through a Normal Map node first. It's required for proper conversion of the image data.</p>
                     </div>
@@ -516,7 +516,7 @@
                         <li><strong>Archive Projects</strong>: Keep complete project files for future reference</li>
                     </ul>
 
-                    <div class="pro-tip-box">
+                    <div class="info-box">
                         <h4>Professional Workflow Tip:</h4>
                         <p>Create a standard material template with placeholder Normal Map nodes already set up correctly. This ensures consistent setup across all your projects and saves time on every new material.</p>
                     </div>
@@ -579,7 +579,7 @@
 
                     <p>The transformation from flat, computer-generated surfaces to convincing, tactile materials is one of the most satisfying aspects of 3D rendering. With the knowledge from this guide, you now have the tools to achieve that transformation in your own work. The only limit is your imagination and willingness to experiment.</p>
 
-                    <div class="final-tip-box">
+                    <div class="info-box">
                         <h4>Final Professional Tip:</h4>
                         <p>Build a library of well-organized, tested Normal Maps and node setups. Over time, this library becomes one of your most valuable assets, allowing you to quickly achieve professional results while focusing your creative energy on design rather than technical implementation.</p>
                     </div>
@@ -587,25 +587,26 @@
             </div>
 
             <aside class="article-sidebar">
-                <h3>Table of Contents</h3>
-                <ul class="table-of-contents">
-                    <li><a href="#understanding-normal-maps">1. Understanding Normal Maps</a></li>
-                    <li><a href="#types-of-normal-maps">2. Types of Normal Maps</a></li>
-                    <li><a href="#the-critical-color-space-setting">3. Critical Color Space Setting</a></li>
-                    <li><a href="#basic-node-setup">4. Basic Node Setup</a></li>
-                    <li><a href="#complete-pbr-workflow">5. Complete PBR Workflow</a></li>
-                    <li><a href="#normal-map-node-settings">6. Normal Map Node Settings</a></li>
-                    <li><a href="#troubleshooting-common-issues">7. Troubleshooting Issues</a></li>
-                    <li><a href="#advanced-techniques">8. Advanced Techniques</a></li>
-                    <li><a href="#performance-considerations">9. Performance & Optimization</a></li>
-                    <li><a href="#creating-custom-normal-maps">10. Creating Custom Normal Maps</a></li>
-                    <li><a href="#real-world-applications">11. Real-World Applications</a></li>
-                    <li><a href="#best-practices">12. Professional Best Practices</a></li>
-                    <li><a href="#advanced-tips">13. Advanced Tips</a></li>
-                    <li><a href="#conclusion">Conclusion</a></li>
-                </ul>
+                <details class="toc-collapsible">
+                    <summary>Table of Contents</summary>
+                    <ul class="table-of-contents">
+                        <li><a href="#understanding-normal-maps">1. Understanding Normal Maps</a></li>
+                        <li><a href="#types-of-normal-maps">2. Types of Normal Maps</a></li>
+                        <li><a href="#the-critical-color-space-setting">3. Critical Color Space Setting</a></li>
+                        <li><a href="#basic-node-setup">4. Basic Node Setup</a></li>
+                        <li><a href="#complete-pbr-workflow">5. Complete PBR Workflow</a></li>
+                        <li><a href="#normal-map-node-settings">6. Normal Map Node Settings</a></li>
+                        <li><a href="#troubleshooting-common-issues">7. Troubleshooting Issues</a></li>
+                        <li><a href="#advanced-techniques">8. Advanced Techniques</a></li>
+                        <li><a href="#performance-considerations">9. Performance & Optimization</a></li>
+                        <li><a href="#creating-custom-normal-maps">10. Creating Custom Normal Maps</a></li>
+                        <li><a href="#real-world-applications">11. Real-World Applications</a></li>
+                        <li><a href="#best-practices">12. Professional Best Practices</a></li>
+                        <li><a href="#advanced-tips">13. Advanced Tips</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                    </ul>
+                </details>
 
-                <!-- START: Replace the old sidebar section with this -->
                 <div class="donation-widget">
                     <h3>Support BlenderForge</h3>
                     <p>If you find this content helpful, please consider a donation!</p>
@@ -616,13 +617,11 @@
                         <input type="number" id="donation-amount" name="donation-amount" min="1.00" step="0.01" value="5.00">
                     </div>
 
-                    <!-- This is the original container for the buttons -->
                     <div id="paypal-button-container"></div>
                 </div>
-                <!-- END: New sidebar section -->
 
-                <h3>Quick Reference</h3>
-                <div class="quick-reference-box">
+                <div class="info-box">
+                    <h3>Quick Reference</h3>
                     <h4>Essential Steps:</h4>
                     <ol>
                         <li>Load Normal Map texture</li>
@@ -633,13 +632,15 @@
                     </ol>
                 </div>
                 
-                <h3>Related Articles</h3>
-                <ul>
-                    <li><a href="blender-pbr-complete-guide.html">Complete PBR Texturing Guide</a></li>
-                    <li><a href="blender-displacement-mapping.html">Displacement Mapping Mastery</a></li>
-                    <li><a href="blender-texture-baking.html">Professional Texture Baking</a></li>
-                    <li><a href="blender-material-optimization.html">Material Performance Optimization</a></li>
-                </ul>
+                <div class="related-articles-widget">
+                    <h3>Related Articles</h3>
+                    <ul>
+                        <li><a href="blender-pbr-complete-guide.html">Complete PBR Texturing Guide</a></li>
+                        <li><a href="blender-displacement-mapping.html">Displacement Mapping Mastery</a></li>
+                        <li><a href="blender-texture-baking.html">Professional Texture Baking</a></li>
+                        <li><a href="blender-material-optimization.html">Material Performance Optimization</a></li>
+                    </ul>
+                </div>
             </aside>
         </article>
     </main>
@@ -664,43 +665,32 @@
     </script>
     <script>
         paypal.Buttons({
-            // This function is called when the user clicks the PayPal button
             createOrder: function(data, actions) {
-                // 1. Get the donation amount from the input field
                 var donationAmount = document.getElementById('donation-amount').value;
 
-                // 2. Basic validation: Make sure it's a number and at least $1.00
                 if (isNaN(donationAmount) || donationAmount < 1) {
                     alert('Please enter a valid donation amount of at least $1.00.');
-                    // By returning, we stop the transaction from proceeding.
                     return; 
                 }
 
-                // 3. Use the user-provided amount to create the order
                 return actions.order.create({
                     purchase_units: [{
                         description: 'A friendly donation to support BlenderForge content!',
                         amount: {
-                            currency_code: 'USD', // It's good practice to be explicit
-                            value: donationAmount // Use the variable here
+                            currency_code: 'USD',
+                            value: donationAmount
                         }
                     }]
                 });
             },
 
-            // Finalize the transaction after payer approval (this part remains the same)
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(orderData) {
-                    // Successful capture! You can still log this for debugging.
                     console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                    
-                    // --- THIS IS THE IMPORTANT PART ---
-                    // Redirect the user to your new thank you page
                     window.location.href = 'thank-you.html'; 
                 });
             },
 
-            // Handle errors (this part remains the same)
             onError: function(err) {
                 console.error('An error occurred during the transaction', err);
                 alert('An error occurred. Please try again later.');

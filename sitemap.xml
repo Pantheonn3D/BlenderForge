@@ -9,32 +9,37 @@
 
 <url>
   <loc>https://www.blenderforge.com/</loc>
-  <lastmod>2025-06-03T21:47:48+00:00</lastmod>
+  <lastmod>2025-06-06T21:47:48+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.blenderforge.com/tutorials</loc>
-  <lastmod>2025-06-03T21:47:48+00:00</lastmod>
+  <lastmod>2025-06-06T21:47:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.blenderforge.com/tips</loc>
-  <lastmod>2025-06-03T21:47:48+00:00</lastmod>
+  <lastmod>2025-06-06T21:47:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.blenderforge.com/articles/blender-interface</loc>
-  <lastmod>2025-06-03T21:47:48+00:00</lastmod>
+  <lastmod>2025-06-06T21:47:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.blenderforge.com/articles/blender-light-paths-guide</loc>
-  <lastmod>2025-06-03T21:47:48+00:00</lastmod>
+  <lastmod>2025-06-06T21:47:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.blenderforge.com/media/articles/blender-normal-maps-complete-guide</loc>
-  <lastmod>2025-06-03T21:47:48+00:00</lastmod>
+  <lastmod>2025-06-06T21:47:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.blenderforge.com/articles/blender-camera-controls-complete-guide.html</loc>
+  <lastmod>2025-06-06T21:47:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
