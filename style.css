@@ -1,26 +1,41 @@
+/* ================================================ */
+/* ============== BLENDERFORGE STYLES =============== */
+/* ================================================ */
+
+/* --- Base & Typography --- */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     background-color: #121212;
     color: #E0E0E0;
-    position: relative;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background-image:
-        linear-gradient(to bottom right, rgba(224, 224, 224, 0.02) 0%, rgba(224, 224, 224, 0) 50%, rgba(30, 30, 30, 0.01) 100%),
-        radial-gradient(rgba(224, 224, 224, 0.1) 0.5px, transparent 0.5px);
-    background-size: auto, 15px 15px;
-    background-repeat: no-repeat, repeat;
+        radial-gradient(circle at 1px 1px, rgba(224, 224, 224, 0.1) 1px, transparent 0);
+    background-size: 25px 25px;
 }
 
+a {
+    color: #f3ce02;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+a:hover {
+    color: #ffd900;
+    text-decoration: underline;
+}
+
+/* --- Header --- */
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 40px;
-    background: rgba(18,18,18,0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(224, 224, 224, 0.05);
+    background: rgba(18, 18, 18, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -35,17 +50,19 @@ body {
     color: #E0E0E0;
     gap: 12px;
 }
+.header-logo-title a:hover {
+    text-decoration: none;
+}
 
 .header-logo-title img {
-    width: 50px; /* Might reduce this for mobile */
+    width: 45px;
     height: auto;
 }
 
 .header-logo-title h2 {
     margin: 0;
-    font-size: 1.5em; /* Might reduce this for mobile */
+    font-size: 1.5em;
     font-weight: 600;
-    color: #f3ce02;
 }
 
 .header-nav ul {
@@ -53,22 +70,23 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 8px; /* Might reduce this for mobile or stack nav */
+    gap: 8px;
 }
 
 .header-nav a {
     text-decoration: none;
     color: #a0a0a0;
     font-weight: 500;
-    padding: 8px 16px; /* Might reduce this for mobile */
+    padding: 8px 16px;
     border-radius: 8px;
     transition: background-color 0.2s ease, color 0.2s ease;
-    font-size: 0.9em; /* Might reduce this for mobile */
+    font-size: 0.9em;
 }
 
 .header-nav a:hover {
     color: #E0E0E0;
-    background-color: rgba(224, 224, 224, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
+    text-decoration: none;
 }
 .header-nav a.active {
     background-color: rgba(243, 206, 2, 0.15);
@@ -76,37 +94,39 @@ body {
     font-weight: 600;
 }
 
+
+/* --- Hero Section (Homepage) --- */
 .hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(90vh - 70px); /* Consider adjusting 70px if header height changes */
-    padding: 40px 32px 60px; /* Might reduce this for mobile */
+    min-height: calc(85vh - 75px); /* 75px is approx header height */
+    padding: 40px 32px 60px;
     text-align: center;
     position: relative;
 }
 
 .hero-content-inner {
-    max-width: 750px;
-    margin: 0 auto;
-    margin-bottom: 40px; /* Might reduce this for mobile */
+    max-width: 800px;
+    margin: 0 auto 40px auto;
 }
 
 .hero-section h1 {
-    font-size: 3.5em; /* Might reduce this for mobile */
-    color: #E0E0E0;
+    font-size: 3.8em;
+    color: #FFFFFF;
     margin-bottom: 15px;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
+    line-height: 1.1;
 }
 
 .hero-section .subtitle {
-    font-size: 1.25em; /* Might reduce this for mobile */
+    font-size: 1.25em;
     color: #a0a0a0;
     line-height: 1.7;
     margin-bottom: 30px;
-    max-width: 600px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -114,45 +134,17 @@ body {
 .hero-tags {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
-    gap: 10px;
-    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .hero-tags span {
-    background-color: rgba(224, 224, 224, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
     color: #b0b0b0;
-    padding: 6px 12px; /* Might reduce this for mobile */
-    border-radius: 16px;
-    font-size: 0.85em; /* Might reduce this for mobile */
-    border: 1px solid rgba(224, 224, 224, 0.1);
-}
-
-/* --- Page Title Section (for Tutorials, Tips etc. pages) --- */
-.page-title-section {
-    padding: 50px 32px 40px;
-    text-align: center;
-    background-color: rgba(22,22,22,0.3);
-    border-bottom: 1px solid rgba(224, 224, 224, 0.05);
-}
-
-.page-title-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.page-title-section h1 {
-    font-size: 2.8em; /* Might reduce this for mobile */
-    color: #E0E0E0;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.page-title-section p {
-    font-size: 1.1em; /* Might reduce this for mobile */
-    color: #a0a0a0;
-    line-height: 1.6;
-    margin-bottom: 0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-search-container {
@@ -161,16 +153,21 @@ body {
     margin: 0 auto;
 }
 .search-bar {
-    background: rgba(30, 30, 30, 0.45);
+    background: rgba(30, 30, 30, 0.5);
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);
-    border: 1px solid rgba(224, 224, 224, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
-    padding: 10px 18px; /* Might reduce this for mobile */
+    padding: 10px 18px;
     position: relative;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.search-bar:focus-within {
+    border-color: #f3ce02;
+    box-shadow: 0 0 0 3px rgba(243, 206, 2, 0.2);
 }
 
 .search-bar input[type="search"] {
@@ -179,21 +176,16 @@ body {
     border: none;
     outline: none;
     color: #E0E0E0;
-    font-size: 1.1em; /* Might reduce this for mobile */
+    font-size: 1.1em;
     padding: 8px 12px;
 }
 .search-bar input[type="search"]::placeholder {
     color: #757575;
 }
-
 .search-bar input[type="search"]::-webkit-search-decoration,
-.search-bar input[type="search"]::-webkit-search-cancel-button,
-.search-bar input[type="search"]::-webkit-search-results-button,
-.search-bar input[type="search"]::-webkit-search-results-decoration {
+.search-bar input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
-    display: none;
 }
-
 .search-icon {
     color: #a0a0a0;
     margin-right: 8px;
@@ -214,78 +206,114 @@ body {
 }
 .search-clear-btn:hover {
     color: #E0E0E0;
-    background-color: rgba(224, 224, 224, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
-.search-clear-btn svg {
-    display: block;
-}
-
 .search-shortcut {
     color: #757575;
-    background-color: rgba(224, 224, 224, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.8em;
-    border: 1px solid rgba(224, 224, 224, 0.1);
-    /* This might be hidden on mobile */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.articles-section {
-    padding: 60px 32px; /* Might reduce this for mobile */
-    background-color: rgba(24,24,24,0.5);
-    margin-top: 0;
+/* --- Page Title Section (for non-home pages) --- */
+.page-title-section {
+    padding: 60px 32px;
+    text-align: center;
+    background: linear-gradient(rgba(18,18,18,0.2), rgba(18,18,18,0.8));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.page-title-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.page-title-section h1 {
+    font-size: 3em;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.page-title-section p {
+    font-size: 1.15em;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
-.articles-container {
-    max-width: 1100px;
+/* --- Intro Text Section (Homepage) --- */
+.intro-text-section {
+    padding: 60px 32px;
+    background-color: #1a1a1a;
+}
+.intro-text-container {
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
+.intro-text-container h2 {
+    font-size: 2.2em;
+    color: #E0E0E0;
+    margin-bottom: 20px;
+}
+.intro-text-container p {
+    font-size: 1.1em;
+    color: #b0b0b0;
+    line-height: 1.8;
+}
+
+/* --- Articles Section & Cards --- */
+.articles-section {
+    padding: 80px 32px;
+}
+
+.articles-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 .articles-container > h2 {
-    margin-bottom: 50px; /* Might reduce this for mobile */
-    font-size: 2.4em; /* Might reduce this for mobile */
+    margin-bottom: 50px;
+    font-size: 2.5em;
     color: #E0E0E0;
     border-bottom: 2px solid #f3ce02;
     display: inline-block;
-    padding-bottom: 8px;
-    text-align: left;
+    padding-bottom: 10px;
 }
 
 .article-grid {
     display: grid;
-    /* This is already responsive, but we can adjust minmax for smaller screens if needed */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px; /* Might reduce this for mobile */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 35px;
     text-align: left;
 }
 
 .article-card {
-    background: rgba(30, 30, 30, 0.6);
-    backdrop-filter: blur(8px) saturate(110%);
-    -webkit-backdrop-filter: blur(8px) saturate(110%);
-    border: 1px solid rgba(224, 224, 224, 0.08);
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, border-color 0.25s ease-in-out;
 }
 
 .article-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+    border-color: rgba(243, 206, 2, 0.5);
 }
 
 .article-card-image {
     width: 100%;
-    height: 200px; /* Consider adjusting or making aspect-ratio based for mobile */
+    height: 200px;
     object-fit: cover;
+    display: block;
 }
 
 .article-card-content {
-    padding: 20px 25px; /* Might reduce this for mobile */
+    padding: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -295,17 +323,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 15px;
-    margin-bottom: 12px;
-    font-size: 0.8em; /* Might reduce this for mobile */
+    margin-bottom: 15px;
+    font-size: 0.8em;
     color: #a0a0a0;
 }
-
 .meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
 }
-
 .meta-item svg {
     width: 14px;
     height: 14px;
@@ -315,328 +341,85 @@ body {
 .article-card h3 {
     margin-top: 0;
     margin-bottom: 12px;
+    color: #E0E0E0;
+    font-size: 1.35em;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+.article-card:hover h3 {
     color: #f3ce02;
-    font-size: 1.35em; /* Might reduce this for mobile */
 }
 
 .article-card p {
-    font-size: 0.95em; /* Might reduce this for mobile */
-    line-height: 1.6;
+    font-size: 0.95em;
+    line-height: 1.7;
     color: #b0b0b0;
     flex-grow: 1;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .article-card-link {
     display: inline-block;
-    text-decoration: none;
-    color: rgb(218, 139, 3);
+    color: #f3ce02;
     font-weight: 600;
-    padding: 6px 0;
-    transition: color 0.2s ease, letter-spacing 0.2s ease;
+    transition: letter-spacing 0.2s ease;
     margin-top: auto;
     align-self: flex-start;
 }
-
 .article-card-link:hover {
-    color: #f3ce02;
     letter-spacing: 0.5px;
-}
-
-/* --- Article Page Specific Styles --- */
-.article-page-main {
-    padding: 0 32px; /* Might reduce horizontal padding for mobile */
-}
-
-.article-content-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
-    gap: 40px; /* Might reduce this for mobile */
-}
-
-.article-header {
-    grid-column: 1 / -1;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(224, 224, 224, 0.1);
-}
-
-.article-header h1 {
-    font-size: 2.8em; /* Might reduce this for mobile */
-    color: #E0E0E0;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.article-meta-detailed {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    font-size: 0.9em; /* Might reduce this for mobile */
-    color: #a0a0a0;
-    margin-bottom: 25px;
-}
-
-.article-meta-detailed .meta-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-.article-meta-detailed .meta-item svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-}
-
-.article-hero-image {
-    width: 100%;
-    max-height: 450px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-
-.article-body {
-    grid-column: 1 / 2;
-    font-size: 1.05em; /* Might reduce this for mobile */
-    line-height: 1.7;
-    color: #c0c0c0;
-}
-
-.article-body h2 {
-    font-size: 2em; /* Might reduce this for mobile */
-    color: #E0E0E0;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #f3ce02;
-}
-.article-body h2:first-child {
-    margin-top: 0;
-}
-
-
-.article-body h3 {
-    font-size: 1.5em; /* Might reduce this for mobile */
-    color: #E0E0E0;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.article-body p {
-    margin-bottom: 1.5em;
-}
-
-.article-body p.lead {
-    font-size: 1.2em; /* Might reduce this for mobile */
-    color: #E0E0E0;
-    margin-bottom: 2em;
-    font-weight: 500;
-}
-
-.article-body ul,
-.article-body ol {
-    margin-bottom: 1.5em;
-    padding-left: 25px; /* Might reduce this for mobile */
-}
-.article-body ul li,
-.article-body ol li {
-    margin-bottom: 0.5em;
-}
-
-.article-body figure {
-    margin: 2em 0;
-    text-align: center;
-}
-
-.article-body figure img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid rgba(224, 224, 224, 0.1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.article-body figcaption {
-    font-size: 0.85em; /* Might reduce this for mobile */
-    color: #a0a0a0;
-    margin-top: 10px;
-    font-style: italic;
-}
-
-.article-body code {
-    background-color: #1E1E1E;
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em; /* Might reduce this for mobile */
-    word-break: break-all; /* Help prevent overflow for long code strings */
-}
-.article-body pre {
-    background-color: #1E1E1E;
-    padding: 15px; /* Might reduce this for mobile */
-    border-radius: 8px;
-    overflow-x: auto;
-    margin-bottom: 1.5em;
-    border: 1px solid rgba(224, 224, 224, 0.1);
-}
-.article-body pre code {
-    padding: 0;
-    background-color: transparent;
-    font-size: 0.9em; /* Might reduce this for mobile */
-    word-break: normal; /* Allow normal breaking in pre, rely on overflow-x */
-}
-
-
-.article-sidebar {
-    grid-column: 2 / 3;
-    padding-left: 20px;
-    border-left: 1px solid rgba(224, 224, 224, 0.08);
-    align-self: start;
-    position: sticky;
-    top: 100px;
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-}
-
-.article-sidebar h3 {
-    font-size: 1.3em; /* Might reduce this for mobile */
-    color: #f3ce02;
-    margin-bottom: 10px;
-    margin-top: 0;
-}
-.article-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px;
-}
-.article-sidebar ul li a {
-    color: #a0a0a0;
     text-decoration: none;
-    padding: 5px 0;
-    display: block;
-    font-size: 0.9em; /* Might reduce this for mobile */
-    transition: color 0.2s ease;
-}
-.article-sidebar ul li a:hover {
-    color: #E0E0E0;
-}
-.article-sidebar .table-of-contents li a {
-    padding-left: 10px;
-    border-left: 2px solid transparent;
-}
-.article-sidebar .table-of-contents li a:hover {
-    border-left-color: #f3ce02;
-}
-
-
-/* Responsive adjustments for article page - THIS IS GOOD, KEEPING IT */
-@media (max-width: 900px) {
-    .article-content-container {
-        grid-template-columns: 1fr; /* Stack content and sidebar */
-        gap: 30px; /* Reduce gap when stacked */
-    }
-    .article-sidebar {
-        grid-column: 1 / -1; /* Sidebar takes full width below content */
-        border-left: none;
-        border-top: 1px solid rgba(224, 224, 224, 0.08);
-        padding-left: 0;
-        padding-top: 20px;
-        position: static; /* Remove sticky for stacked layout */
-        max-height: none;
-        overflow-y: visible;
-    }
-}
-/* --- Intro Text Section (Homepage) --- */
-.intro-text-section {
-    padding: 40px 32px; /* Might reduce this for mobile */
-    background-color: rgba(24,24,24,0.2);
-}
-
-.intro-text-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.intro-text-container h2 {
-    font-size: 2.2em; /* Might reduce this for mobile */
-    color: #E0E0E0;
-    margin-bottom: 20px;
-}
-
-.intro-text-container p {
-    font-size: 1.1em; /* Might reduce this for mobile */
-    color: #b0b0b0;
-    line-height: 1.7;
-}
-.intro-text-container p a {
-    color: #f3ce02;
-    text-decoration: none;
-    font-weight: 500;
-}
-.intro-text-container p a:hover {
-    text-decoration: underline;
 }
 
 /* --- Q&A / FAQ Section --- */
 .qa-section {
-    padding: 60px 32px; /* Might reduce this for mobile */
-    background-color: #121212;
+    padding: 80px 32px;
+    background-color: #1a1a1a;
 }
-
 .qa-container {
     max-width: 850px;
     margin: 0 auto;
-    text-align: center; /* For centering inline-block h2 */
 }
-
-.qa-container > h2 {
-    font-size: 2.4em; /* Might reduce this for mobile */
+.qa-title-block {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.qa-title-block h2 {
+    font-size: 2.5em;
     color: #E0E0E0;
     margin-bottom: 15px;
-    border-bottom: 2px solid #f3ce02;
-    display: inline-block;
-    padding-bottom: 8px;
-    text-align: left; /* Reset for h2 content */
 }
-
-.qa-container > p.qa-intro {
-    text-align: center;
-    font-size: 1.1em; /* Might reduce this for mobile */
+.qa-title-block .qa-intro {
+    font-size: 1.1em;
     color: #a0a0a0;
-    margin-bottom: 40px;
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
-
-.accordion {
-    width: 100%;
-    text-align: left;
+.accordion-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
 }
-
 .accordion-item {
-    background: rgba(30, 30, 30, 0.45);
-    backdrop-filter: blur(10px) saturate(120%);
-    -webkit-backdrop-filter: blur(10px) saturate(120%);
-    border: 1px solid rgba(224, 224, 224, 0.1);
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     margin-bottom: 15px;
     overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+.accordion-item:focus-within {
+    border-color: rgba(243, 206, 2, 0.5);
 }
 
 .accordion-header {
     background: transparent;
     border: none;
     width: 100%;
-    padding: 18px 25px; /* Might reduce this for mobile */
+    padding: 20px 25px;
     text-align: left;
-    font-size: 1.15em; /* Might reduce this for mobile */
+    font-size: 1.15em;
     font-weight: 600;
     color: #E0E0E0;
     cursor: pointer;
@@ -645,11 +428,9 @@ body {
     align-items: center;
     transition: background-color 0.2s ease;
 }
-
 .accordion-header:hover {
-    background-color: rgba(224, 224, 224, 0.05);
+    background-color: rgba(255, 255, 255, 0.03);
 }
-
 .accordion-header .accordion-icon {
     width: 12px;
     height: 12px;
@@ -658,316 +439,249 @@ body {
     transform: rotate(45deg);
     transition: transform 0.3s ease-in-out;
     margin-left: 15px;
+    flex-shrink: 0;
 }
-
 .accordion-header[aria-expanded="true"] .accordion-icon {
     transform: rotate(-135deg);
-    margin-top: -4px;
+    margin-top: -6px;
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s ease-in-out, padding 0.35s ease-in-out;
+    transition: max-height 0.35s ease-in-out, padding-top 0.35s ease-in-out, padding-bottom 0.35s ease-in-out;
     background-color: rgba(24,24,24,0.3);
-    padding: 0 25px; /* Horizontal padding might be reduced */
 }
-
 .accordion-content p {
     margin: 0;
-    padding: 20px 0;
-    font-size: 1em; /* Might reduce this for mobile */
+    padding: 0 25px;
+    font-size: 1em;
     line-height: 1.7;
     color: #b0b0b0;
 }
-.accordion-content p:first-child {
-    padding-top: 25px;
-}
-.accordion-content p:last-child {
+.accordion-item[aria-expanded="true"] .accordion-content {
+    padding-top: 10px;
     padding-bottom: 25px;
 }
 
-.accordion-content a {
-    color: #03DAC6;
-    text-decoration: none;
-    font-weight: 500;
+/* --- Article Page Specific Styles --- */
+.article-page-main {
+    padding: 40px 32px;
 }
-.accordion-content a:hover {
-    text-decoration: underline;
+.article-content-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) 280px;
+    gap: 60px;
+}
+.article-header {
+    grid-column: 1 / -1;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.article-header h1 {
+    font-size: 3em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.article-meta-detailed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+    font-size: 0.9em;
+    color: #a0a0a0;
+}
+.article-meta-detailed .meta-item svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+.article-hero-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 30px;
+    background-color: #1e1e1e;
+}
+.article-body {
+    grid-column: 1 / 2;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #c0c0c0;
+}
+.article-body > *:first-child {
+    margin-top: 0;
+}
+.article-body p.lead {
+    font-size: 1.25em;
+    color: #E0E0E0;
+    margin-bottom: 2em;
+    font-weight: 400;
+}
+.article-body h2 {
+    font-size: 2em;
+    color: #FFFFFF;
+    margin: 2em 0 1em 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f3ce02;
+}
+.article-body h3 {
+    font-size: 1.6em;
+    color: #E0E0E0;
+    margin: 1.8em 0 1em 0;
+}
+.article-body ul, .article-body ol {
+    margin: 1.5em 0;
+    padding-left: 30px;
+}
+.article-body ul li, .article-body ol li {
+    margin-bottom: 0.8em;
+}
+.article-body figure {
+    margin: 2.5em 0;
+    text-align: center;
+}
+.article-body figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.article-body figcaption {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-top: 12px;
+    font-style: italic;
+}
+.article-body code {
+    background-color: #101010;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
     color: #f3ce02;
 }
 
+.article-sidebar {
+    grid-column: 2 / 3;
+    align-self: start;
+    position: sticky;
+    top: 100px; /* Header height + spacing */
+}
+.article-sidebar h3 {
+    font-size: 1.3em;
+    color: #f3ce02;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.article-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.article-sidebar ul li a {
+    color: #a0a0a0;
+    padding: 6px 0;
+    display: block;
+    font-size: 0.95em;
+    border-left: 2px solid transparent;
+    padding-left: 15px;
+    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+}
+.article-sidebar ul li a:hover {
+    color: #E0E0E0;
+    border-left-color: #f3ce02;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+/* --- Footer --- */
 .site-footer-main {
     text-align: center;
-    padding: 30px 32px; /* Might reduce this for mobile */
-    background-color: rgba(18,18,18,0.5);
-    margin-top: 60px; /* Might reduce this for mobile */
+    padding: 40px 32px;
+    background-color: #1a1a1a;
     color: #888888;
-    font-size: 0.85em; /* Might reduce this for mobile */
-    border-top: 1px solid rgba(224, 224, 224, 0.05);
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* ================================================ */
-/* ================ MOBILE STYLES ================= */
+/* ================ RESPONSIVENESS ================ */
 /* ================================================ */
+
+@media (max-width: 1024px) {
+    .article-content-container {
+        grid-template-columns: minmax(0, 1fr) 240px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .article-content-container {
+        grid-template-columns: 1fr;
+    }
+    .article-sidebar {
+        grid-column: 1 / -1;
+        position: static;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
 
 @media (max-width: 768px) {
     .site-header {
-        padding: 10px 15px; /* Reduced padding */
-        flex-direction: column; /* Stack logo and nav */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .header-logo-title {
-        margin-bottom: 10px; /* Space between logo-title and nav when stacked */
-    }
-
-    .header-logo-title img {
-        width: 40px; /* Smaller logo */
-    }
-
-    .header-logo-title h2 {
-        font-size: 1.3em; /* Smaller title */
-    }
-
-    .header-nav ul {
-        flex-direction: column; /* Stack nav items */
-        gap: 5px; /* Reduced gap */
-        width: 100%; /* Make nav take full width */
-        align-items: flex-start; /* Align nav items to start */
-    }
-
-    .header-nav a {
-        padding: 8px 10px; /* Adjusted padding */
-        font-size: 0.85em; /* Slightly smaller font */
-        width: 100%; /* Make links take full width of their container */
-        box-sizing: border-box;
-    }
-    
-    .hero-section {
-        padding: 30px 15px 40px; /* Reduced padding */
-        min-height: calc(80vh - 100px); /* Adjust if header height changes significantly */
-    }
-
-    .hero-content-inner {
-        margin-bottom: 25px;
-    }
-
-    .hero-section h1 {
-        font-size: 2.2em; /* Significantly smaller for mobile */
-    }
-
-    .hero-section .subtitle {
-        font-size: 1em; /* Smaller subtitle */
-        margin-bottom: 20px;
-    }
-
-    .hero-tags {
-        gap: 8px; /* Slightly reduced gap */
-        margin-bottom: 20px;
-    }
-
-    .hero-tags span {
-        padding: 5px 10px;
-        font-size: 0.8em;
-    }
-
-    .page-title-section {
-        padding: 30px 15px 25px;
-    }
-
-    .page-title-section h1 {
-        font-size: 2em;
-    }
-
-    .page-title-section p {
-        font-size: 1em;
-    }
-    
-    .search-bar {
-        padding: 8px 12px;
-    }
-
-    .search-bar input[type="search"] {
-        font-size: 1em;
-        padding: 6px 8px;
-    }
-
-    .search-shortcut {
-        display: none; /* Hide search shortcut on mobile */
-    }
-
-    .articles-section {
-        padding: 40px 15px;
-    }
-
-    .articles-container > h2 {
-        font-size: 1.8em;
-        margin-bottom: 30px;
-    }
-
-    .article-grid {
-        /* Adjust minmax for narrower cards if 320px is too wide for some small phones */
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-    }
-    
-    .article-card:hover { /* Disable hover transform on mobile if it causes issues */
-        transform: none; 
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Reset to base shadow */
-    }
-
-    .article-card-content {
         padding: 15px 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
-    .article-card-meta {
-        font-size: 0.75em;
-        gap: 8px 12px;
+    .hero-section {
+        padding: 40px 20px 50px;
+        min-height: auto;
     }
-    
-    .article-card h3 {
-        font-size: 1.2em;
+    .hero-section h1 {
+        font-size: 2.5em;
     }
-
-    .article-card p {
-        font-size: 0.9em;
-    }
-
-    .article-page-main {
-        padding: 0 15px;
-    }
-    
-    /* .article-content-container already handled by 900px media query */
-
-    .article-header h1 {
-        font-size: 2.2em;
-    }
-
-    .article-meta-detailed {
-        font-size: 0.85em;
-        gap: 8px 15px;
-    }
-    
-    .article-body {
-        font-size: 0.95em; /* Slightly smaller body text for mobile */
-    }
-
-    .article-body h2 {
-        font-size: 1.6em;
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-
-    .article-body h3 {
-        font-size: 1.3em;
-        margin-top: 25px;
-        margin-bottom: 10px;
-    }
-    
-    .article-body p.lead {
+    .hero-section .subtitle {
         font-size: 1.1em;
     }
+    .search-shortcut { display: none; }
 
-    .article-body ul,
-    .article-body ol {
-        padding-left: 20px;
-    }
+    .page-title-section { padding: 40px 20px; }
+    .page-title-section h1 { font-size: 2.2em; }
+    .page-title-section p { font-size: 1.05em; }
 
-    .article-body figcaption {
-        font-size: 0.8em;
-    }
-
-    .article-body code,
-    .article-body pre code {
-        font-size: 0.85em; /* Smaller code font */
-    }
-    .article-body pre {
-        padding: 10px;
-    }
-
-    .article-sidebar h3 {
-        font-size: 1.15em;
-    }
-    .article-sidebar ul li a {
-        font-size: 0.85em;
-    }
-
-    .intro-text-section {
-        padding: 30px 15px;
-    }
-
-    .intro-text-container h2 {
-        font-size: 1.8em;
-    }
-
-    .intro-text-container p {
-        font-size: 1em;
-    }
-
-    .qa-section {
-        padding: 40px 15px;
-    }
-
-    .qa-container > h2 {
-        font-size: 1.8em;
-    }
-    .qa-container > p.qa-intro {
-        font-size: 1em;
-        margin-bottom: 30px;
-    }
-
-    .accordion-header {
-        padding: 15px 20px;
-        font-size: 1.05em;
-    }
-
-    .accordion-content {
-        padding: 0 20px; /* Adjust horizontal padding */
-    }
-    .accordion-content p {
-        font-size: 0.95em;
-        padding: 15px 0;
-    }
-    .accordion-content p:first-child {
-        padding-top: 20px;
-    }
-    .accordion-content p:last-child {
-        padding-bottom: 20px;
-    }
-
+    .intro-text-section,
+    .articles-section,
+    .qa-section,
+    .article-page-main,
     .site-footer-main {
-        padding: 25px 15px;
-        margin-top: 40px;
-        font-size: 0.8em;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-}
+    .articles-section, .qa-section { padding-top: 60px; padding-bottom: 60px; }
 
-/* Optional: Even smaller screen adjustments if needed */
-@media (max-width: 480px) {
-    .hero-section h1 {
-        font-size: 2em;
-    }
-    .hero-section .subtitle {
-        font-size: 0.9em;
-    }
-    
+    .articles-container > h2, .qa-title-block h2 { font-size: 2em; }
+    .qa-title-block .qa-intro { font-size: 1em; }
+
     .article-grid {
-        /* Force single column on very small screens */
         grid-template-columns: 1fr;
+        gap: 25px;
     }
+    .article-card:hover { transform: none; }
 
-    .article-header h1 {
-        font-size: 1.8em;
-    }
+    .article-header h1 { font-size: 2.4em; }
+    .article-body { font-size: 1em; }
+    .article-body h2 { font-size: 1.8em; }
+    .article-body h3 { font-size: 1.4em; }
 
-    .article-body {
-        font-size: 0.9em;
-    }
-    .article-body h2 {
-        font-size: 1.4em;
-    }
-    .article-body h3 {
-        font-size: 1.2em;
-    }
+    .accordion-header { font-size: 1.05em; }
 }

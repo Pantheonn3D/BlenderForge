@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHVPQ5HVR5"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,25 +19,29 @@
     <link rel="canonical" href="https://www.blenderforge.com/tutorials.html">
     <link rel="icon" href="media/website/favicon.ico" type="image/x-icon">
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Blender Tutorials - Learn 3D Modeling, Animation & Shading | BlenderForge">
     <meta property="og:description" content="Explore a comprehensive collection of Blender tutorials on BlenderForge. Learn 3D modeling, animation, texturing, and more.">
     <meta property="og:type" content="website"> 
     <meta property="og:url" content="https://www.blenderforge.com/tutorials.html">
     <meta property="og:image" content="https://www.blenderforge.com/media/website/blenderforge-og-image.png">
-    <meta property="og:image:alt" content="BlenderForge Tutorials Collection">
+    <meta property="og:image:alt" content="A grid of BlenderForge tutorial cards.">
     <meta property="og:site_name" content="BlenderForge">
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blender Tutorials - Learn 3D Modeling, Animation & Shading | BlenderForge">
     <meta name="twitter:description" content="Explore a comprehensive collection of Blender tutorials on BlenderForge. Learn 3D modeling, animation, texturing, and more.">
     <meta name="twitter:image" content="https://www.blenderforge.com/media/website/blenderforge-og-image.png">
-    <meta name="twitter:image:alt" content="BlenderForge Tutorials Collection">
+    <meta name="twitter:image:alt" content="A grid of BlenderForge tutorial cards.">
 
+    <!-- Fonts & Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,21 +50,9 @@
       "url": "https://www.blenderforge.com/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.blenderforge.com/search?q={search_term_string}"
-        },
+        "target": "https://www.blenderforge.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "BlenderForge",
-      "url": "https://www.blenderforge.com/",
-      "logo": "https://www.blenderforge.com/media/website/blenderforge-logo.png"
     }
     </script>
 </head>
@@ -85,31 +77,29 @@
         <section class="page-title-section">
             <div class="page-title-container">
                 <h1>Blender Tutorials</h1>
-                <p>Dive into comprehensive guides to master various Blender features.</p>
+                <p>Dive into comprehensive guides to master various Blender features, from your first cube to complex scenes.</p>
             </div>
         </section>
 
-        <section class="articles-section" id="all-tutorials">
+        <section class="articles-section" id="articles">
             <div class="articles-container">
-                <h2>All Tutorials</h2>
+                <h2>Latest Articles</h2>
                 <script type="application/ld+json">
                 {
                   "@context": "https://schema.org",
                   "@type": "ItemList",
-                  "name": "Blender Tutorials",
-                  "description": "A collection of Blender 3D tutorials covering various topics from beginner to advanced levels.",
+                  "name": "Latest BlenderForge Articles",
                   "itemListElement": [
                     {
                       "@type": "ListItem",
                       "position": 1,
                       "item": {
                         "@type": "TechArticle",
-                        "url": "https://www.blenderforge.com/articles/blender-interface.html",
-                        "name": "Understanding the Blender Interface",
-                        "headline": "Understanding the Blender Interface",
-                        "image": "https://www.blenderforge.com/media/website/blender-interface-thumb.png",
-                        "description": "A quick overview of Blender's main windows and controls for beginners.",
-                        "datePublished": "2023-10-26",
+                        "url": "https://www.blenderforge.com/articles/blender-normal-maps-complete-guide.html",
+                        "name": "Blender Normal Maps: The Complete Guide to Photorealistic Surface Detail",
+                        "headline": "A quick overview of Blender's normal maps and how they enhance surface detail and realism in 3D models.",
+                        "image": "https://www.blenderforge.com/media/website/normal-map-comparison-hero.jpg",
+                        "datePublished": "2025-06-04",
                         "author": {"@type": "Organization", "name": "BlenderForge"}
                       }
                     },
@@ -118,12 +108,11 @@
                       "position": 2,
                       "item": {
                         "@type": "TechArticle",
-                        "url": "https://www.blenderforge.com/articles/basic-modeling.html",
-                        "name": "Basic Modeling Techniques",
-                        "headline": "Basic Modeling Techniques",
-                        "image": "https://www.blenderforge.com/media/website/modeling-thumb.png",
-                        "description": "Learn essential modeling tools and workflows to create your first 3D objects.",
-                        "datePublished": "2023-10-20",
+                        "url": "https://www.blenderforge.com/articles/blender-light-paths-guide.html",
+                        "name": "How Light Paths Work in Blender",
+                        "headline": "A quick overview of Blender's light paths and how they affect rendering.",
+                        "image": "https://www.blenderforge.com/media/website/light-paths-thumbnail.png",
+                        "datePublished": "2025-06-04",
                         "author": {"@type": "Organization", "name": "BlenderForge"}
                       }
                     },
@@ -132,12 +121,11 @@
                       "position": 3,
                       "item": {
                         "@type": "TechArticle",
-                        "url": "https://www.blenderforge.com/articles/intro-shading.html",
-                        "name": "Introduction to Shading",
-                        "headline": "Introduction to Shading",
-                        "image": "https://www.blenderforge.com/media/website/shading-thumb.png",
-                        "description": "Discover how to apply materials and textures to bring your models to life.",
-                        "datePublished": "2023-10-15",
+                        "url": "https://www.blenderforge.com/articles/blender-interface.html",
+                        "name": "Understanding the Blender Interface",
+                        "headline": "A quick overview of Blender's main windows and controls for beginners.",
+                        "image": "https://www.blenderforge.com/media/website/blender-interface-thumb.png",
+                        "datePublished": "2025-06-03",
                         "author": {"@type": "Organization", "name": "BlenderForge"}
                       }
                     },
@@ -146,13 +134,12 @@
                       "position": 4,
                       "item": {
                         "@type": "TechArticle",
-                        "url": "https://www.blenderforge.com/articles/advanced-sculpting.html",
-                        "name": "Advanced Sculpting Workflows",
-                        "headline": "Advanced Sculpting Workflows",
-                        "image": "https://www.blenderforge.com/media/website/sculpting-thumb.png",
-                        "description": "Explore professional techniques for creating detailed characters and creatures.",
-                        "datePublished": "2023-10-10",
-                        "author": {"@type": "Organization", "name": "BlenderForge"}
+                        "url": "https://www.blenderforge.com/articles/basic-modeling.html",
+                        "name": "Basic Modeling Techniques",
+                        "headline": "Learn essential modeling tools and workflows to create your first 3D objects.",
+                        "image": "https://www.blenderforge.com/media/website/coming-soon.png",
+                        "datePublished": "2025-10-20",
+                         "author": {"@type": "Organization", "name": "BlenderForge"}
                       }
                     }
                   ]
@@ -160,71 +147,66 @@
                 </script>
                 <div class="article-grid">
                     <article class="article-card">
-                        <img src="media/website/blender-interface-thumb.png" alt="Blender User Interface showing different panels" class="article-card-image">
+                        <a href="articles/blender-normal-maps-complete-guide.html" class="article-card-image-link" aria-hidden="true" tabindex="-1">
+                            <img src="media/website/normal-map-comparison-hero.jpg" alt="Blender render showing a detailed surface with normal maps applied." class="article-card-image">
+                        </a>
                         <div class="article-card-content">
                             <div class="article-card-meta">
-                                <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" fill="currentColor" /></svg>
-                                    30 min read
-                                </span>
-                                <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 13.9633H16V7.96331H10V9.96331H12.5858L7.25623 15.2929L8.67044 16.7071L14 11.3775L14 13.9633Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="currentColor" /></svg>
-                                    Beginner
-                                </span>
-                                <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z" fill="currentColor" /></svg>
-                                    June 3, 2025
-                                </span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" fill="currentColor" /></svg>15 min read</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M14 13.9633H16V7.96331H10V9.96331H12.5858L7.25623 15.2929L8.67044 16.7071L14 11.3775L14 13.9633Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="currentColor" /></svg>Beginner</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z" fill="currentColor" /></svg>June 4, 2025</span>
                             </div>
-                            <h3>Understanding the Blender Interface</h3>
-                            <p>A quick overview of Blender's main windows and controls for beginners.</p>
+                            <h3><a href="articles/blender-normal-maps-complete-guide.html">Blender Normal Maps: The Complete Guide to Photorealistic Surface Detail</a></h3>
+                            <p>A quick overview of Blender's normal maps and how they enhance surface detail and realism in 3D models.</p>
+                            <a href="articles/blender-normal-maps-complete-guide.html" class="article-card-link">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <a href="articles/blender-light-paths-guide.html" class="article-card-image-link" aria-hidden="true" tabindex="-1">
+                            <img src="media/website/light-paths-thumbnail.png" alt="Blender render showing transparent glass panes correctly rendered with sufficient light bounces." class="article-card-image">
+                        </a>
+                        <div class="article-card-content">
+                            <div class="article-card-meta">
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" fill="currentColor" /></svg>15 min read</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M14 13.9633H16V7.96331H10V9.96331H12.5858L7.25623 15.2929L8.67044 16.7071L14 11.3775L14 13.9633Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="currentColor" /></svg>Beginner</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z" fill="currentColor" /></svg>June 4, 2025</span>
+                            </div>
+                            <h3><a href="articles/blender-light-paths-guide.html">How Light Paths Work in Blender</a></h3>
+                            <p>A quick overview of Blender's light paths and how they affect rendering realism, especially with glass and transparent objects.</p>
+                            <a href="articles/blender-light-paths-guide.html" class="article-card-link">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <a href="articles/blender-interface.html" class="article-card-image-link" aria-hidden="true" tabindex="-1">
+                            <img src="media/website/blender-interface-thumb.png" alt="The Blender User Interface showing different panels like the 3D Viewport and Properties editor." class="article-card-image">
+                        </a>
+                        <div class="article-card-content">
+                            <div class="article-card-meta">
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" fill="currentColor" /></svg>30 min read</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M14 13.9633H16V7.96331H10V9.96331H12.5858L7.25623 15.2929L8.67044 16.7071L14 11.3775L14 13.9633Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="currentColor" /></svg>Beginner</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z" fill="currentColor" /></svg>June 3, 2025</span>
+                            </div>
+                            <h3><a href="articles/blender-interface.html">Understanding the Blender Interface</a></h3>
+                            <p>A comprehensive overview of Blender's main windows, workspaces, and essential controls for absolute beginners.</p>
                             <a href="articles/blender-interface.html" class="article-card-link">Read More →</a>
                         </div>
                     </article>
 
                     <article class="article-card">
-                        <img src="media/website/coming-soon.png" alt="Abstract 3D model being created in Blender" class="article-card-image">
+                        <a href="articles/basic-modeling.html" class="article-card-image-link" aria-hidden="true" tabindex="-1">
+                            <img src="media/website/coming-soon.png" alt="Abstract 3D model being created in Blender, representing a future article on modeling." class="article-card-image">
+                        </a>
                         <div class="article-card-content">
                             <div class="article-card-meta">
-                                <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" fill="currentColor" /></svg>
-                                    12 min read
-                                </span>
-                                <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 13.9633H16V7.96331H10V9.96331H12.5858L7.25623 15.2929L8.67044 16.7071L14 11.3775L14 13.9633Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="currentColor" /></svg>
-                                    Intermediate
-                                </span>
-                                 <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z" fill="currentColor" /></svg>
-                                    Not yet published, 2025
-                                </span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" fill="currentColor" /></svg>12 min read</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M14 13.9633H16V7.96331H10V9.96331H12.5858L7.25623 15.2929L8.67044 16.7071L14 11.3775L14 13.9633Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="currentColor" /></svg>Intermediate</span>
+                                <span class="meta-item"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z" fill="currentColor" /></svg>Coming Soon</span>
                             </div>
-                            <h3>Basic Modeling Techniques</h3>
-                            <p>Learn essential modeling tools and workflows to create your first 3D objects.</p>
+                            <h3><a href="articles/basic-modeling.html">Basic Modeling Techniques</a></h3>
+                            <p>Learn essential modeling tools and workflows like extrusion, bevels, and loop cuts to create your first 3D objects.</p>
                             <a href="articles/basic-modeling.html" class="article-card-link">Read More →</a>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <img src="media/website/coming-soon.png" alt="Colorful textured 3D sphere in Blender" class="article-card-image">
-                        <div class="article-card-content">
-                             <div class="article-card-meta">
-                                <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" fill="currentColor" /></svg>
-                                    8 min read
-                                </span>
-                                <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 13.9633H16V7.96331H10V9.96331H12.5858L7.25623 15.2929L8.67044 16.7071L14 11.3775L14 13.9633Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="currentColor" /></svg>
-                                    Beginner
-                                </span>
-                                 <span class="meta-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z" fill="currentColor" /></svg>
-                                    Not yet published, 2025
-                                </span>
-                            </div>
-                            <h3>Introduction to Shading</h3>
-                            <p>Discover how to apply materials and textures to bring your models to life.</p>
-                            <a href="articles/intro-shading.html" class="article-card-link">Read More →</a>
                         </div>
                     </article>
                 </div>
@@ -235,26 +217,6 @@
     <footer class="site-footer-main">
         <p>© 2025 BlenderForge. All rights reserved.</p>
     </footer> 
-
-    <script>
-        const searchInput = document.getElementById('heroSearchInput');
-        const clearButton = document.getElementById('searchClearBtn');
-
-        if (searchInput && clearButton) { 
-            searchInput.addEventListener('input', () => {
-                if (searchInput.value.length > 0) {
-                    clearButton.style.display = 'inline-flex';
-                } else {
-                    clearButton.style.display = 'none';
-                }
-            });
-
-            clearButton.addEventListener('click', () => {
-                searchInput.value = '';
-                searchInput.focus();
-                clearButton.style.display = 'none';
-            });
-        }
-    </script>
 </body>
 </html>
+
